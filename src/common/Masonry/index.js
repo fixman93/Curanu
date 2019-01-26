@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 
 import Container from '../Container/'
 
+import './Masonry.scss'
+
 class MasonryLayout extends Component {
 
   render() {
@@ -18,7 +20,7 @@ class MasonryLayout extends Component {
     for (let i = 0; i < this.props.children.length; i++) {
       const columnIndex = i % this.props.columns;
       columnWrapper[`column${columnIndex}`].push(
-        <div className='col' style={{ marginBottom: `${this.props.gap}px` }}>
+        <div className='col card' style={{ marginBottom: `${this.props.gap}px` }}>
           {this.props.children[i]}
           {console.log('dsada', this.props.children[i])}
         </div>
@@ -38,7 +40,7 @@ class MasonryLayout extends Component {
       );
     }
     return (
-      <Container class='container flex'>
+      <Container class='cards container flex'>
         {result}
       </Container>
     )
