@@ -1,0 +1,46 @@
+header {
+  .logo {
+    img {
+      vertical-align: bottom;
+      margin-right: 29px;
+    }
+    span {
+      font-weight: bold;
+    }
+  }
+  nav {
+    background-color: #9e419c;
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 14px;
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 16px;
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .SearchBar {
+      display: flex;
+      max-width: 380px;
+      width: 100%;
+      input {
+        border: 1px solid #dae4ee;
+        background: white;
+        height: 45px;
+        width: calc(100% - 45px);
+      }
+      button {
+        border: 0;
+        background-color: #e5f0fa;
+        width: 45px;
+      }
+    }
+  }
+}

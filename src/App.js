@@ -1,29 +1,17 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import './App.css';
 
-class Home extends Component {
-  render() {
-    return (
-      <div>Home</div>
-    )
-  }
-}
+import Dashboard from './containers/Dashboard/'
+import Contact from './containers/Contact/'
 
-class Contact extends Component {
-  render() {
-    return (
-      <div>Contact</div>
-    )
-  }
-}
+import './App.scss';
 class App extends Component {
   render() {
     return (
       <Router>
         <Switch>
           <Route path="/contact" component={Contact} />
-          <Route path="/" component={Home} />
+          <Route path="/" component={Dashboard} />
         </Switch>
       </Router>
     );

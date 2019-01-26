@@ -1,0 +1,30 @@
+.Topbar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #D8D8D8;
+  .nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    li {
+      padding: 0 14px;
+      a {
+        color: #657189;
+        text-decoration: none;
+      }
+    }
+  }
+  .notification {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    li {
+      margin-left: 14px;
+      background: #E5F0FA;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
