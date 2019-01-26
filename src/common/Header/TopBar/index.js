@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom'
 import Container from '../../Container/'
 import Settings from '../../../assets/img/black-settings-button.svg'
 import Notifications from '../../../assets/img/notification-bell.svg'
@@ -12,11 +12,11 @@ class TopBar extends Component {
       <Container class='container'>
         <div className='Topbar'>
           <ul className='nav'>
-            <li><a href='#'>Groepen	Contact</a></li>
-            <li><a href='#'>FAQ</a></li>
-            <li><a href='#'>Smoelenboek</a></li>
-            <li><a href='#'>Microblog</a></li>
-            <li><a href='#'>Over ons</a></li>
+            <li><Link to='/'>Groepen	Contact</Link></li>
+            <li><Link to='/'>FAQ</Link></li>
+            <li><Link to='/'>Smoelenboek</Link></li>
+            <li><Link to='/'>Microblog</Link></li>
+            <li><Link to='/'>Over ons</Link></li>
           </ul>
 
           <ul className='notification'>
