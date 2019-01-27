@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Dashboard from './containers/Dashboard/'
 import Contact from './containers/Contact/'
 
-import './App.scss';
+import './App.scss'
 class App extends Component {
   render() {
     return (
@@ -14,8 +14,8 @@ class App extends Component {
           <Route path="/" component={Dashboard} />
         </Switch>
       </Router>
-    );
+    )
   }
 }
 
-export default App;
+export default App

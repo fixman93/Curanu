@@ -8,21 +8,21 @@ import './Masonry.scss'
 class MasonryLayout extends Component {
 
   render() {
-    const columnWrapper = {};
-    const result = [];
+    const columnWrapper = {}
+    const result = []
 
     // create columns
     for (let i = 0; i < this.props.columns; i++) {
-      columnWrapper[`column${i}`] = [];
+      columnWrapper[`column${i}`] = []
     }
     // divide children into columns
     for (let i = 0; i < this.props.children.length; i++) {
-      const columnIndex = i % this.props.columns;
+      const columnIndex = i % this.props.columns
       columnWrapper[`column${columnIndex}`].push(
         <div className='col card' key={i} style={{ marginBottom: `${this.props.gap}px` }}>
           {this.props.children[i]}
         </div>
-      );
+      )
     }
 
     // wrap children in each column with a div
@@ -34,7 +34,7 @@ class MasonryLayout extends Component {
           }} key={i} className='column'>
           {columnWrapper[`column${i}`]}
         </div>
-      );
+      )
     }
     return (
       <Container class='cards container flex'>

@@ -32,31 +32,31 @@ class Contact extends Component {
   }
 
   validateField(fieldName, value) {
-    let fieldValidationErrors = this.state.formErrors;
-    let nameValid = this.state.nameValid;
-    let emailValid = this.state.emailValid;
-    let subjectValid = this.state.subjectValid;
-    let messageValid = this.state.messageValid;
+    let fieldValidationErrors = this.state.formErrors
+    let nameValid = this.state.nameValid
+    let emailValid = this.state.emailValid
+    let subjectValid = this.state.subjectValid
+    let messageValid = this.state.messageValid
 
     switch (fieldName) {
       case 'email':
-        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        fieldValidationErrors.email = emailValid ? '' : ' is invalid';
-        break;
+        emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+        fieldValidationErrors.email = emailValid ? '' : ' is invalid'
+        break
       case 'name':
-        nameValid = value.length >= 1;
-        fieldValidationErrors.name = nameValid ? '' : ' Please enter text';
-        break;
+        nameValid = value.length >= 1
+        fieldValidationErrors.name = nameValid ? '' : ' Please enter text'
+        break
       case 'subject':
-        subjectValid = value.length >= 1;
-        fieldValidationErrors.subject = subjectValid ? '' : ' Please enter text';
-        break;
+        subjectValid = value.length >= 1
+        fieldValidationErrors.subject = subjectValid ? '' : ' Please enter text'
+        break
       case 'message':
-        messageValid = value.length >= 1;
-        fieldValidationErrors.message = messageValid ? '' : ' Please enter text';
-        break;
+        messageValid = value.length >= 50
+        fieldValidationErrors.message = messageValid ? '' : ' please enter minimum 50 characters'
+        break
       default:
-        break;
+        break
     }
     this.setState({
       formErrors: fieldValidationErrors,
@@ -64,15 +64,15 @@ class Contact extends Component {
       emailValid: emailValid,
       subjectValid: subjectValid,
       messageValid: messageValid
-    }, this.validateForm);
+    }, this.validateForm)
   }
 
   validateForm() {
-    this.setState({ formValid: this.state.nameValid && this.state.emailValid && this.state.subjectValid && this.state.messageValid });
+    this.setState({ formValid: this.state.nameValid && this.state.emailValid && this.state.subjectValid && this.state.messageValid })
   }
 
   errorClass(error) {
-    return (error.length === 0 ? '' : 'has-error');
+    return (error.length === 0 ? '' : 'has-error')
   }
   render() {
     return (

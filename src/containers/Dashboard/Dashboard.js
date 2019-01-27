@@ -19,7 +19,7 @@ class Dashboard extends Component {
       class: 'collapsed',
       showCards: []
     }
-    this.toggleCollapse = this.toggleCollapse.bind(this);
+    this.toggleCollapse = this.toggleCollapse.bind(this)
   }
 
   toggleCollapse(i, info) {
@@ -32,6 +32,7 @@ class Dashboard extends Component {
         this.setState(prevState => ({
           showCards: !prevState.showCards['open'] === false
         }))
+        /*eslint-disable */
         this.state.showCards['open'] = false
       }
       else {
@@ -39,6 +40,7 @@ class Dashboard extends Component {
           showCards: !prevState.showCards['open'] === true
         }))
         this.state.showCards['open'] = true
+        /*eslint-enable */
       }
 
     })
