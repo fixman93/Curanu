@@ -1,0 +1,59 @@
+.form.container {
+  margin-bottom: 30px;
+}
+.contact-form {
+  width: calc(100% - 280px);
+  padding: 0 30px;
+  h1 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  p {
+    color: #657189;
+    font-size: 14px;
+  }
+  .form-group {
+    margin-bottom: 20px;
+    label {
+      width: 100px;
+      display: inline-block;
+      vertical-align: top;
+    }
+    input {
+      border: 1px solid #ccc;
+      font-size: 16px;
+      border-radius: 25px;
+      padding: 10px;
+      max-width: 280px;
+      width: 100%;
+    }
+    textarea {
+      font-size: 16px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      width: calc(100% - 100px);
+    }
+  }
+  .submit {
+    text-align: right;
+    button {
+      background: black;
+      color: white;
+      border: 0;
+      font-size: 16px;
+      padding: 8px 20px;
+      border-radius: 25px;
+      max-width: 150px;
+      width: 100%;
+      cursor: pointer;
+      &.error {
+        background: white;
+        border: 1px solid gray;
+        color: gray;
+        cursor: default;
+      }
+    }
+  }
+}
