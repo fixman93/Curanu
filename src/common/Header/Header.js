@@ -30,7 +30,7 @@ class Header extends Component {
         <TopBar mymenu={this.toggleMenu} />
         <Container class='container'>
           <div className='logo'>
-            <img src={Logo} alt='CuraNu' />
+            <Link to='/'><img src={Logo} alt='CuraNu' /></Link>
             <span>Intranet</span>
           </div>
         </Container>

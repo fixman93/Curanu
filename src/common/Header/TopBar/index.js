@@ -13,7 +13,7 @@ class TopBar extends Component {
       <Container class='container'>
         <div className='Topbar'>
           <ul className='nav'>
-            <li><Link to='/'>Groepen	Contact</Link></li>
+            <li><Link to='/contact'>Groepen	Contact</Link></li>
             <li><Link to='/'>FAQ</Link></li>
             <li><Link to='/'>Smoelenboek</Link></li>
             <li><Link to='/'>Microblog</Link></li>
