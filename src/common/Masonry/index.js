@@ -13,16 +13,14 @@ class MasonryLayout extends Component {
 
     // create columns
     for (let i = 0; i < this.props.columns; i++) {
-      console.log('i', i)
       columnWrapper[`column${i}`] = [];
     }
     // divide children into columns
     for (let i = 0; i < this.props.children.length; i++) {
       const columnIndex = i % this.props.columns;
       columnWrapper[`column${columnIndex}`].push(
-        <div className='col card' style={{ marginBottom: `${this.props.gap}px` }}>
+        <div className='col card' key={i} style={{ marginBottom: `${this.props.gap}px` }}>
           {this.props.children[i]}
-          {console.log('dsada', this.props.children[i])}
         </div>
       );
     }
