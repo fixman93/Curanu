@@ -10,6 +10,7 @@ class Dashboard extends Component {
 
   componentDidMount() {
     this.props.cardAction()
+    this.setState({ showCards: this.state.Cards })
   }
   constructor(props) {
     super(props)
@@ -24,38 +25,33 @@ class Dashboard extends Component {
   toggleCollapse(i, info) {
     console.log('i', info, 'iiiii', i)
     this.setState({
-      ollapsed: !this.state.collapsed,
+      collapsed: !this.state.collapsed,
       class: this.state.collapsed ? '' : 'collapsed',
       showCards: info
     }, () => {
       // my state is updated here !
-      console.log('llllll', this.state.showCards)
-      if (this.state.showCards.open === 'active') {
-        console.log('open')
-        this.setState({
-          showCards: {
-            open: 'inactive',
-            ...this.state.showCards
-          }
-        })
+      if (this.state.showCards.open) {
+        this.setState(prevState => ({
+          showCards: !prevState.showCards['open'] === false
+        }));
+        this.state.showCards['open'] = false
       }
       else {
-        this.setState({
-          showCards: {
-            open: 'active',
-            ...this.state.showCards
-          }
-        })
+        this.state.showCards['open'] = true
+        this.setState(prevState => ({
+          showCards: !prevState.showCards['open'] === true
+        }));
       }
-      // console.log('this state', this.state)
+
     })
+    console.log('cardsss', this.state.showCards)
   }
 
   render() {
     const cardList = this.props.Cards.map((info, i) => {
       return (
-        <div className={(info.open === 'active') ? 'collapsed' : ''} key={i}>
-          <div className={(info.open === 'active') ? 'header flex space-between active' : 'header flex space-between'}>
+        <div className={info.open ? 'collapsed' : ''} key={i}>
+          <div className={info.open ? 'header flex space-between active' : 'header flex space-between'}>
             <h2>{info.title}</h2>
             <span onClick={() => { this.toggleCollapse(i, info) }}><img src={Arrow_Down} alt='Arrow' /></span>
           </div>

@@ -66,6 +66,10 @@ header {
       border-radius: 50%;
       font-size: 20px;
       cursor: pointer;
+      display: none;
+      @include bp(medium) {
+        display: block;
+      }
     }
     .SearchBar {
       display: flex;
