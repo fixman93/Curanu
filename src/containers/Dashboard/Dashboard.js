@@ -23,28 +23,25 @@ class Dashboard extends Component {
   }
 
   toggleCollapse(i, info) {
-    console.log('i', info, 'iiiii', i)
     this.setState({
       collapsed: !this.state.collapsed,
       class: this.state.collapsed ? '' : 'collapsed',
       showCards: info
     }, () => {
-      // my state is updated here !
       if (this.state.showCards.open) {
         this.setState(prevState => ({
           showCards: !prevState.showCards['open'] === false
-        }));
+        }))
         this.state.showCards['open'] = false
       }
       else {
-        this.state.showCards['open'] = true
         this.setState(prevState => ({
           showCards: !prevState.showCards['open'] === true
-        }));
+        }))
+        this.state.showCards['open'] = true
       }
 
     })
-    console.log('cardsss', this.state.showCards)
   }
 
   render() {

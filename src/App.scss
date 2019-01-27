@@ -61,3 +61,12 @@ ul {
     align-items: center;
   }
 }
+
+.column {
+  flex: 1;
+  @include bp(medium) {
+    width: 100%;
+    min-width: 100%;
+    margin-left: 0!important;
+  }
+}

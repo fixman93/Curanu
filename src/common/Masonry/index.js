@@ -31,8 +31,7 @@ class MasonryLayout extends Component {
         <div
           style={{
             marginLeft: `${i > 0 ? this.props.gap : 0}px`,
-            flex: 1,
-          }} key={i}>
+          }} key={i} className='column'>
           {columnWrapper[`column${i}`]}
         </div>
       );

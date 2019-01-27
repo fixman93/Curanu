@@ -37,6 +37,8 @@
       justify-content: space-around;
       &.mobile-menu-btn {
         display: none;
+        line-height: 50px;
+        text-align: center;
         @include bp(medium) {
           display: block;
         }

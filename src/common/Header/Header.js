@@ -17,13 +17,11 @@ class Header extends Component {
     this.closeMenu = this.closeMenu.bind(this)
   }
   toggleMenu() {
-    console.log('test')
     this.setState(prevState => {
       return { showMenu: !prevState.showMenu };
     });
   }
   closeMenu() {
-    console.log('testttt')
     this.setState({ showMenu: false })
   }
   render() {
