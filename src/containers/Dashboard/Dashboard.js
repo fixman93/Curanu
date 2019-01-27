@@ -28,11 +28,11 @@ class Dashboard extends Component {
       class: this.state.collapsed ? '' : 'collapsed',
       showCards: info
     }, () => {
+      /*eslint-disable */
       if (this.state.showCards.open) {
         this.setState(prevState => ({
           showCards: !prevState.showCards['open'] === false
         }))
-        /*eslint-disable */
         this.state.showCards['open'] = false
       }
       else {
@@ -40,9 +40,8 @@ class Dashboard extends Component {
           showCards: !prevState.showCards['open'] === true
         }))
         this.state.showCards['open'] = true
-        /*eslint-enable */
       }
-
+      /*eslint-enable */
     })
   }
 
