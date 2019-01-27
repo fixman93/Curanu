@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Presentation
+[PowerPoint](https://docs.google.com/presentation/d/1I1WUxo5l6nEAg-sRrU6xq2p6Z9soQ5jDoXpPRt_4MRM/edit?usp=sharing)
 ## Available Scripts
 
 In the project directory, you can run:
