@@ -1,7 +1,36 @@
 * {
   box-sizing: border-box;
 }
+/* mixins */
 
+@mixin bp($point) {
+  @if $point == fullhd {
+    @media (min-width: 1500px) { @content; }
+  }
+  @else if $point == extralarge {
+    @media (max-width: 1199px) { @content; }
+  }
+  @else if $point == large {
+    @media (max-width: 991px) { @content; }
+  }
+  @else if $point == extralarge {
+    @media (max-width: 1200px) and (min-width: 992px) {
+      @content;
+    }
+  }
+  @else if $point == extramedium {
+    @media (max-width: 991px) and (min-width: 768px) { @content; }
+  }
+  @else if $point == medium {
+    @media (max-width: 767px)  { @content; }
+  }
+  @else if $point == small {
+    @media (max-width: 576px)  { @content; }
+  }
+}
+
+
+/* end of mixins */
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -17,6 +46,11 @@ body {
   max-width: 100%;
   width: 100%;
   padding: 0 15px;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
 }
 
 .flex {

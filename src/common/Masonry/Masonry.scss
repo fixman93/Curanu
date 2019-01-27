@@ -1,5 +1,4 @@
 div.cards {
-  margin-top: 39px;
   .header {
     background-color: #ebf0f4;
     h2 {
@@ -8,7 +7,9 @@ div.cards {
       font-weight: 700;
       text-transform: uppercase;
       color: #ff952d;
-      padding: 0 18px;
+      width: calc(100% - 50px);
+      padding: 13px 18px;
+      transition: all .4s; 
     }
     span {
       display: block;
@@ -16,15 +17,29 @@ div.cards {
       text-align: center;
       line-height: 50px;
       background-color: #e5f0fa;
+      img {
+        transform: rotate(-90deg);
+        transition: all .4s;
+      }
+    }
+    &.active {
+      h2 {
+        background-color: #657189;
+      }
+      span {
+        img {
+          transform: rotate(0deg);
+        }
+      }
     }
   }
   .card {
     border: 1px solid #dae4ee;
-    transition: all .4s;
     .content {
       height: 0;
       overflow: hidden;
       padding: 0;
+      transition: all .4s;
       p {
         margin: 0;
         color: #657189;

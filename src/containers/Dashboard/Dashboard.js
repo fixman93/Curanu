@@ -10,8 +10,6 @@ class Dashboard extends Component {
 
   componentDidMount() {
     this.props.cardAction()
-    console.log('show all cards', this.props.Cards)
-    this.setState({ showCards: this.props.Cards })
   }
   constructor(props) {
     super(props)
@@ -23,27 +21,43 @@ class Dashboard extends Component {
     this.toggleCollapse = this.toggleCollapse.bind(this);
   }
 
-  toggleCollapse(i) {
-    console.log('i', i)
+  toggleCollapse(i, info) {
+    console.log('i', info, 'iiiii', i)
     this.setState({
-      collapsed: !this.state.collapsed,
+      ollapsed: !this.state.collapsed,
       class: this.state.collapsed ? '' : 'collapsed',
-      showCards: this.state.Cards
-    });
-    console.log(this.state.showCards)
+      showCards: info
+    }, () => {
+      // my state is updated here !
+      console.log('llllll', this.state.showCards)
+      if (this.state.showCards.open === 'active') {
+        console.log('open')
+        this.setState({
+          showCards: {
+            open: 'inactive',
+            ...this.state.showCards
+          }
+        })
+      }
+      else {
+        this.setState({
+          showCards: {
+            open: 'active',
+            ...this.state.showCards
+          }
+        })
+      }
+      // console.log('this state', this.state)
+    })
   }
 
   render() {
-    console.log('cards', this.props.Cards)
-    console.log('pre push-a', this.state.showCards)
-    // this.state.showCards.push('test')
-    // console.log('posle push-a', this.state.showCards)
     const cardList = this.props.Cards.map((info, i) => {
       return (
-        <div className={(info.open === 'true') ? 'collapsed' : ''} key={i}>
-          <div className='header flex space-between'>
+        <div className={(info.open === 'active') ? 'collapsed' : ''} key={i}>
+          <div className={(info.open === 'active') ? 'header flex space-between active' : 'header flex space-between'}>
             <h2>{info.title}</h2>
-            <span onClick={() => { this.toggleCollapse(i) }}><img src={Arrow_Down} alt='Arrow' /></span>
+            <span onClick={() => { this.toggleCollapse(i, info) }}><img src={Arrow_Down} alt='Arrow' /></span>
           </div>
           <div className='content'>
             <p>{info.description}</p>

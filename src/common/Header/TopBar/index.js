@@ -7,6 +7,7 @@ import Notifications from '../../../assets/img/notification-bell.svg'
 import './Topbar.scss'
 
 class TopBar extends Component {
+
   render() {
     return (
       <Container class='container'>
@@ -20,6 +21,7 @@ class TopBar extends Component {
           </ul>
 
           <ul className='notification'>
+            <li onClick={this.props.mymenu} className='mobile-menu-btn'>Menu</li>
             <li>
               <img src={Settings} alt='Settings' />
             </li>

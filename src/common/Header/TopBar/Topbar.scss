@@ -1,18 +1,28 @@
+@import '../../../App.scss';
+
 .Topbar {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #D8D8D8;
+  padding: 8px 0 9px 0;
+  @include bp(medium) {
+    flex-flow: wrap;
+  }
   .nav {
     display: flex;
     list-style: none;
-    padding: 0;
+    padding: 12px;
+    @include bp(medium) {
+      flex-flow: wrap;
+    }
     li {
-      padding: 0 14px;
+      padding: 0 12px;
       a {
         color: #657189;
         text-decoration: none;
       }
     }
+
   }
   .notification {
     list-style: none;
@@ -25,6 +35,12 @@
       height: 50px;
       display: flex;
       justify-content: space-around;
+      &.mobile-menu-btn {
+        display: none;
+        @include bp(medium) {
+          display: block;
+        }
+      }
     }
   }
 }
